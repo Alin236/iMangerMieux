@@ -6,22 +6,24 @@
             <tr>
                 <th>Id de l'aliment</th>
                 <th>Nom de l'aliment </th>
+                <th>ID type aliment </th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-             
-            </tr>
+           
 
         </tbody>
+    </table>
 
 
 <script> 
 
+
+
 $(document).ready(function() {
     $('#example').DataTable( {
         ajax: '../backend/aliments.php',
-        "pagingType": "scrolling"
+        
         processing: true,
         search: {
             return: true
@@ -30,4 +32,5 @@ $(document).ready(function() {
     } );
 
 
-} );</script>
+});
+</script>
