@@ -4,5 +4,6 @@ $myMenu = array(
     // idPage titre
     'accueil' => array( 'Accueil' ),
     'connection' => array( 'Connexion' ),
+    'aliments' => array( 'aliments' ),
 );
 ?>

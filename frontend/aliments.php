@@ -15,11 +15,12 @@
 
         </tbody>
 
-</div>
+
 <script> 
+
 $(document).ready(function() {
     $('#example').DataTable( {
-        ajax: '',
+        ajax: '../backend/aliments.php',
         "pagingType": "scrolling"
         processing: true,
         search: {
