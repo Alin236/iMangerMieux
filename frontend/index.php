@@ -1,9 +1,5 @@
 <?php 
-    $currentLeng = 'fr';
-    if(isset($_GET['leng']))
-        $currentLeng = $_GET['leng'];
     require_once('template_header.php');
-    myHeader($currentLeng);
 ?>
     <div class="container">
         <div class="columnMenu">
@@ -15,16 +11,16 @@
                     if($currentPageId == 'index')
                         $currentPageId = 'accueil';
                 }
-                renderMenuToHTML($currentPageId, $currentLeng);
+                renderMenuToHTML($currentPageId);
             ?>
         </div>
         <section class="contenu">
             <?php
-                $pageToInclude = "$currentLeng/$currentPageId.php";
+                $pageToInclude = "$currentPageId.php";
                 if(is_readable($pageToInclude))
                     require_once($pageToInclude);
                 else
-                    require_once("$currentLeng/error.php");
+                    require_once("error.php");
             ?>
         </section>
     </div>
