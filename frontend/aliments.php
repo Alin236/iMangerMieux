@@ -1,7 +1,7 @@
 
 
-<div id="example" class="box"></div>
-    <table id="table" class="display" style="width:100%">
+<div id="example0" class="box"></div>
+    <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
                 <th>Id de l'aliment</th>
