@@ -4,5 +4,6 @@
         //idPage => titre
         'accueil' => array( 'Accueil' ),
         'connection' => array( 'Connexion' ),
+        'newAccount' => array( 'Créer un nouveau compte')
     );
 ?>
