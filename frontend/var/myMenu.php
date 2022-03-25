@@ -1,9 +1,10 @@
 <?php
-// un tableau qui définit la structure du site
+//Un tableau qui définit la structure du site
 $myMenu = array(
-    // idPage titre
+    //idPage => titre
     'accueil' => array( 'Accueil' ),
     'connection' => array( 'Connexion' ),
     'aliments' => array( 'aliments' ),
+    'newAccount' => array( 'Créer un nouveau compte')
 );
 ?>
