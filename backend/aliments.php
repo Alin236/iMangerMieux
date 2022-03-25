@@ -12,7 +12,7 @@ $res =  mysqli_query($conn,"select * from aliment");
 
 //echo "Connexion succeed\n";
 
-$req =  mysqli_query($conn,"select * from aliment LIMIT 25");
+$req =  mysqli_query($conn,"select * from aliment ");
 
 if(mysqli_num_rows($req) >  0){
 	
@@ -28,7 +28,7 @@ if(mysqli_num_rows($req) >  0){
         //echo json_encode($tmp);
 	}
 	$response["success"]=1;
-	echo json_encode($response);
+	echo json_encode($response["aliment"]);
 		
 }
 else
