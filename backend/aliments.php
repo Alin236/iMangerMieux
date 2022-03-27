@@ -28,7 +28,7 @@ if(mysqli_num_rows($req) >  0){
         //echo json_encode($tmp);
 	}
 	$response["success"]=1;
-	echo json_encode($response["aliment"]);
+	echo json_encode(($response["aliment"]));
 		
 }
 else

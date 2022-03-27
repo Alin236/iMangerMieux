@@ -22,7 +22,15 @@
 
 $(document).ready(function() {
     $('#example').DataTable( {
-        ajax: '../backend/aliments.php',
+        ajax: {
+        url: '../backend/aliments.php',
+        dataFilter: function(data){
+            var json = jQuery.parseJSON( data );
+ 
+            return JSON.parse( data);
+            // return JSON string
+        }
+    },
         
         processing: true,
         search: {
