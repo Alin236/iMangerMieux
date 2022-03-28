@@ -22,7 +22,7 @@
         $nom = $connection->real_escape_string($_POST['nom']);
         $prenom = $connection->real_escape_string($_POST['prenom']);
 
-        $query = "INSERT INTO utilisateur (login, mot_de_passe, date_de_naissance, genre, nom, prenom) VALUES ('$login', '$mot_de_passe', '$date_de_naissance', '$genre', '$nom', '$prenom')";
+        $query = "INSERT INTO utilisateur (id_utilisateur, login, mot_de_passe, date_de_naissance, genre, nom, prenom) VALUES (NULL, '$login', '$mot_de_passe', '$date_de_naissance', '$genre', '$nom', '$prenom')";
         $result = $connection->query($query);
 
         if($result){
@@ -39,9 +39,16 @@
         $mot_de_passe_bdd = $result->fetch_row()[0];
 
         if($mot_de_passe == $mot_de_passe_bdd){
-            session_start();
-            $_SESSION['login'] = $login;
             echo true;
         }
+    }
+
+    function getProfil($connection){
+        $id_utilisateur = $_SESSION['id_utilisateur'];
+
+        $query = "SELECT nom, prenom, login, date_de_naissance FROM utilisateur WHERE id_utilisateur = $id_utilisateur";
+        $result = $connection->query($query);
+
+        echo json_encode($result->fetch_all());
     }
 ?>
