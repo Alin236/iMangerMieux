@@ -103,7 +103,7 @@ class SSP {
 			$limit = "LIMIT ".intval($request['start']).", ".intval($request['length']);
 		}
 
-		return $limit;
+		return "LIMIT 5";
 	}
 
 

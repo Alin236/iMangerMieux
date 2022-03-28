@@ -15,6 +15,9 @@
             <link href=\"tp1.css\" rel=\"stylesheet\" type=\"text/css\">
             <script src=\"https://code.jquery.com/jquery-3.5.1.min.js\"></script>
             <script src=\"https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js\"></script>
+            <script src=\"https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js\"></script>
+            <script src=\"https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js\"></script>
+            <script src=\"https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js\"></script>
         </head>
         <body>
             <header><h1>iMangerMieux</h1>$connection</header>";

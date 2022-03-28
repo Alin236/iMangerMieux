@@ -1,39 +1,4 @@
 <?php
-/*$conn = new mysqli("localhost", "root", "", "imangermieux");
-if (!$conn) {
-    die("Échec de la connexion : " . mysqli_connect_error());
-}
-$response = array();
-$res =  mysqli_query($conn,"select * from aliment");
-
-//echo "Connexion succeed\n";
-
-$req =  mysqli_query($conn,"select * from aliment LIMIT 4 ");
-
-if(mysqli_num_rows($req) >  0){
-	
-	$tmp=array();
-	$response["aliment"]=array();
-	while($cur=mysqli_fetch_array($req))
-	{
-        $tmp["id_aliment"] = $cur["id_aliment"];
-        $tmp["nom_aliment"] = $cur["nom_aliment"];
-        $tmp["id_type_aliment"] = $cur["id_type_aliment"];
-		array_push($response["aliment"],$tmp);
-        //echo json_encode($tmp);
-	}
-	$response["success"]=1;
-	echo json_encode(($response["aliment"]));		
-}
-else
-{
-	$response["success"]=0;
-	$response["message"]="no data found";
-	echo json_encode($response);
-	
-}*/
-
- 
 /*
  * DataTables example server-side processing script.
  *
@@ -66,7 +31,15 @@ $columns = array(
     array( 'db' => 'id_aliment', 'dt' => 0 ),
     array( 'db' => 'nom_aliment',  'dt' => 1 ),
     array( 'db' => 'id_type_aliment',   'dt' => 2 ),
-);
+    array( 
+        'db'        => 'id_aliment',
+        'dt'        => 3, 
+        'formatter' => function( $d, $row ) { 
+            return '<a href="javascript:void(0)" class="btn btn-primary btn-edit" data-id="'.$row['id_aliment'].'"> Edit </a> <a href="javascript:void(0)" class="btn btn-danger btn-delete ml-2" data-id="'.$row['id_aliment'].'"> Delete </a>'; 
+        } 
+    ) 
+); 
+
  
 // SQL server connection information
 $sql_details = array(
