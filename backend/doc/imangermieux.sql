@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 28 mars 2022 à 07:27
+-- Généré le : lun. 28 mars 2022 à 10:23
 -- Version du serveur : 5.7.36
 -- Version de PHP : 8.0.16
 
@@ -35264,10 +35264,10 @@ CREATE TABLE IF NOT EXISTS `contenir` (
 
 DROP TABLE IF EXISTS `pratiquer`;
 CREATE TABLE IF NOT EXISTS `pratiquer` (
-  `login` varchar(50) NOT NULL,
+  `id_utilisateur` int(11) NOT NULL,
   `id_sport` int(11) NOT NULL,
   `temps_de_pratique` time NOT NULL,
-  PRIMARY KEY (`login`,`id_sport`),
+  PRIMARY KEY (`id_utilisateur`,`id_sport`) USING BTREE,
   KEY `Pratique` (`id_sport`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -35275,9 +35275,8 @@ CREATE TABLE IF NOT EXISTS `pratiquer` (
 -- Déchargement des données de la table `pratiquer`
 --
 
-INSERT INTO `pratiquer` (`login`, `id_sport`, `temps_de_pratique`) VALUES
-('nilavan.deva@etu.imt-lille-douai.fr', 1, '01:30:00'),
-('testForDelete', 1, '16:55:56');
+INSERT INTO `pratiquer` (`id_utilisateur`, `id_sport`, `temps_de_pratique`) VALUES
+(1, 1, '01:30:00');
 
 -- --------------------------------------------------------
 
@@ -35290,39 +35289,39 @@ CREATE TABLE IF NOT EXISTS `repas` (
   `id_repas` int(11) NOT NULL AUTO_INCREMENT,
   `date` datetime NOT NULL,
   `id_type_repas` int(11) NOT NULL,
-  `login` varchar(50) NOT NULL,
+  `id_utilisateur` int(11) NOT NULL,
   PRIMARY KEY (`id_repas`),
   KEY `Est_catégorisé_par` (`id_type_repas`),
-  KEY `Est_consommé_par` (`login`)
+  KEY `Est_consommé_par` (`id_utilisateur`)
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `repas`
 --
 
-INSERT INTO `repas` (`id_repas`, `date`, `id_type_repas`, `login`) VALUES
-(7, '2022-03-21 15:57:20', 1, 'testForDelete'),
-(8, '2022-03-21 16:57:05', 1, 'nilavan.deva@etu.imt-lille-douai.fr'),
-(9, '2022-03-21 16:57:05', 1, 'nilavan.deva@etu.imt-lille-douai.fr'),
-(10, '2022-03-21 16:57:05', 1, 'nilavan.deva@etu.imt-lille-douai.fr'),
-(11, '2022-03-21 16:57:05', 1, 'nilavan.deva@etu.imt-lille-douai.fr'),
-(12, '2022-03-21 16:57:05', 1, 'nilavan.deva@etu.imt-lille-douai.fr'),
-(13, '2022-03-21 16:57:05', 1, 'nilavan.deva@etu.imt-lille-douai.fr'),
-(14, '2022-03-21 16:57:05', 1, 'nilavan.deva@etu.imt-lille-douai.fr'),
-(15, '2022-03-21 16:57:05', 1, 'nilavan.deva@etu.imt-lille-douai.fr'),
-(16, '2022-03-21 16:57:05', 1, 'nilavan.deva@etu.imt-lille-douai.fr'),
-(17, '2022-03-21 16:58:29', 1, 'kanlanfaye.djamoine@etu.imt-lille-douai.fr'),
-(18, '2022-03-21 16:58:29', 1, 'kanlanfaye.djamoine@etu.imt-lille-douai.fr'),
-(19, '2022-03-21 16:58:29', 1, 'kanlanfaye.djamoine@etu.imt-lille-douai.fr'),
-(20, '2022-03-21 16:58:29', 1, 'kanlanfaye.djamoine@etu.imt-lille-douai.fr'),
-(21, '2022-03-21 16:58:29', 1, 'kanlanfaye.djamoine@etu.imt-lille-douai.fr'),
-(22, '2022-03-21 16:58:29', 1, 'kanlanfaye.djamoine@etu.imt-lille-douai.fr'),
-(23, '2022-03-21 16:58:29', 1, 'kanlanfaye.djamoine@etu.imt-lille-douai.fr'),
-(24, '2022-03-21 16:59:17', 1, 'pierre.martin@etu.imt-lille-douai.fr'),
-(25, '2022-03-21 16:59:17', 1, 'pierre.martin@etu.imt-lille-douai.fr'),
-(26, '2022-03-21 16:59:17', 1, 'pierre.martin@etu.imt-lille-douai.fr'),
-(27, '2022-03-21 16:59:17', 1, 'pierre.martin@etu.imt-lille-douai.fr'),
-(28, '2022-03-21 16:59:17', 1, 'pierre.martin@etu.imt-lille-douai.fr');
+INSERT INTO `repas` (`id_repas`, `date`, `id_type_repas`, `id_utilisateur`) VALUES
+(7, '2022-03-21 15:57:20', 1, 1),
+(8, '2022-03-21 16:57:05', 1, 1),
+(9, '2022-03-21 16:57:05', 1, 1),
+(10, '2022-03-21 16:57:05', 1, 1),
+(11, '2022-03-21 16:57:05', 1, 1),
+(12, '2022-03-21 16:57:05', 1, 1),
+(13, '2022-03-21 16:57:05', 1, 1),
+(14, '2022-03-21 16:57:05', 1, 1),
+(15, '2022-03-21 16:57:05', 1, 1),
+(16, '2022-03-21 16:57:05', 1, 1),
+(17, '2022-03-21 16:58:29', 1, 2),
+(18, '2022-03-21 16:58:29', 1, 2),
+(19, '2022-03-21 16:58:29', 1, 2),
+(20, '2022-03-21 16:58:29', 1, 2),
+(21, '2022-03-21 16:58:29', 1, 2),
+(22, '2022-03-21 16:58:29', 1, 2),
+(23, '2022-03-21 16:58:29', 1, 2),
+(24, '2022-03-21 16:59:17', 1, 23),
+(25, '2022-03-21 16:59:17', 1, 23),
+(26, '2022-03-21 16:59:17', 1, 23),
+(27, '2022-03-21 16:59:17', 1, 23),
+(28, '2022-03-21 16:59:17', 1, 23);
 
 -- --------------------------------------------------------
 
@@ -35457,46 +35456,52 @@ INSERT INTO `type_repas` (`id_type_repas`, `libelle_repas`) VALUES
 
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
+  `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(50) NOT NULL,
   `mot_de_passe` varchar(50) NOT NULL,
   `date_de_naissance` date NOT NULL,
   `genre` varchar(50) NOT NULL,
   `nom` varchar(40) NOT NULL,
   `prenom` varchar(40) NOT NULL,
-  PRIMARY KEY (`login`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id_utilisateur`),
+  UNIQUE KEY `login` (`login`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`login`, `mot_de_passe`, `date_de_naissance`, `genre`, `nom`, `prenom`) VALUES
-('alexandre.favreau@etu.imt-lille-douai.fr', 'wqa', '2000-01-01', 'M', 'FAVREAU', 'Alexandre'),
-('alexis.poirot@etu.imt-lille-douai.fr', 'root', '2000-01-02', 'M', 'POIROT', 'Alexis'),
-('anthony.gouthier@etu.imt-lille-douai.fr', '4444', '2000-01-03', 'M', 'GOUTHIER', 'Anthony'),
-('antoine.lambert@etu.imt-lille-douai.fr', '456', '1999-01-04', 'M', 'LAMBERT', 'Antoine'),
-('armand.sumo@etu.imt-lille-douai.fr', 'shtrdg', '2000-01-05', 'M', 'SUMO MOUDJIE TCHAMABE', 'Armand'),
-('cedric.prast@etu.imt-lille-douai.fr', '789', '1998-01-06', 'M', 'PRAST', 'Cédric'),
-('emil.perouse@etu.imt-lille-douai.fr', 'nhy', '2000-01-07', 'M', 'PEROUSE', 'Emil'),
-('ezzat.al.zahabi@etu.imt-lille-douai.fr', 'ss@z2', '2000-01-08', 'M', 'AL ZAHABI', 'Ezzat'),
-('gaelle.erhart@etu.imt-lille-douai.fr', 'eeee', '2000-01-09', 'F', 'ERHART', 'Gaelle'),
-('guillaume.faure@etu.imt-lille-douai.fr', 'Aliment', '2001-01-10', 'M', 'FAURE', 'Guillaume'),
-('hatim.hebboul@etu.imt-lille-douai.fr', 'eujds', '2000-01-11', 'M', 'HEBBOUL', 'Hatim'),
-('hugo.lim@etu.imt-lille-douai.fr', 'LIM.Hugo', '2000-01-12', 'M', 'LIM', 'Hugo'),
-('johan.gaudin@etu.imt-lille-douai.fr', 'Johan', '1999-01-13', 'M', 'GAUDIN', 'Johan'),
-('julia.zink@etu.imt-lille-douai.fr', 'xsz', '2000-01-14', 'F', 'ZINK', 'Julia'),
-('kanlanfaye.djamoine@etu.imt-lille-douai.fr', 'admin', '1999-01-15', 'M', 'DJAMOINE', 'Kanlanfaye'),
-('lea.grumiaux@etu.imt-lille-douai.fr', 'bgt', '1999-01-16', 'F', 'GRUMIAUX', 'Léa'),
-('lucas.arib@etu.imt-lille-douai.fr', 'azerty', '2000-01-17', 'M', 'ARIB', 'Lucas'),
-('mathis.jolivel@etu.imt-lille-douai.fr', 'dfd@zehj', '2000-01-18', 'M', 'JOLIVEL', 'Mathis'),
-('maxime.de.veyrac@etu.imt-lille-douai.fr', 'qwerty', '2000-01-19', 'M', 'DE VEYRAC', 'Maxime'),
-('mekki.ben.hamidouche@etu.imt-lille-douai.fr', 'cde', '2000-01-20', 'M', 'BEN HAMIDOUCHE', 'Mekki'),
-('nilavan.deva@etu.imt-lille-douai.fr', 'admin', '2000-01-21', 'M', 'DEVA', 'Nilavan'),
-('pierre.martin@etu.imt-lille-douai.fr', 'fvr', '1998-01-22', 'M', 'MARTIN', 'Pierre'),
-('sacha.sicoli@etu.imt-lille-douai.fr', 'Sacha', '2001-01-23', 'F', 'SICOLI', 'Sacha'),
-('tanguy.feenstra@etu.imt-lille-douai.fr', 'Tanguy', '2000-01-24', 'M', 'FEENSTRA', 'Tanguy'),
-('testForDelete', 'a', '2000-01-25', 'a', 'a', 'a'),
-('william.nguyen@etu.imt-lille-douai.fr', '123', '2000-01-26', 'M', 'NGUYEN', 'William');
+INSERT INTO `utilisateur` (`id_utilisateur`, `login`, `mot_de_passe`, `date_de_naissance`, `genre`, `nom`, `prenom`) VALUES
+(1, 'alexandre.favreau@etu.imt-lille-douai.fr', 'wqa', '2000-01-01', 'M', 'FAVREAU', 'Alexandre'),
+(2, 'alexis.poirot@etu.imt-lille-douai.fr', 'root', '2000-01-02', 'M', 'POIROT', 'Alexis'),
+(3, 'anthony.gouthier@etu.imt-lille-douai.fr', '4444', '2000-01-03', 'M', 'GOUTHIER', 'Anthony'),
+(4, 'antoine.lambert@etu.imt-lille-douai.fr', '456', '1999-01-04', 'M', 'LAMBERT', 'Antoine'),
+(5, 'armand.sumo@etu.imt-lille-douai.fr', 'shtrdg', '2000-01-05', 'M', 'SUMO MOUDJIE TCHAMABE', 'Armand'),
+(6, 'cedric.prast@etu.imt-lille-douai.fr', '789', '1998-01-06', 'M', 'PRAST', 'Cédric'),
+(7, 'emil.perouse@etu.imt-lille-douai.fr', 'nhy', '2000-01-07', 'M', 'PEROUSE', 'Emil'),
+(8, 'ezzat.al.zahabi@etu.imt-lille-douai.fr', 'ss@z2', '2000-01-08', 'M', 'AL ZAHABI', 'Ezzat'),
+(9, 'gaelle.erhart@etu.imt-lille-douai.fr', 'eeee', '2000-01-09', 'F', 'ERHART', 'Gaelle'),
+(10, 'guillaume.faure@etu.imt-lille-douai.fr', 'Aliment', '2001-01-10', 'M', 'FAURE', 'Guillaume'),
+(11, 'hatim.hebboul@etu.imt-lille-douai.fr', 'eujds', '2000-01-11', 'M', 'HEBBOUL', 'Hatim'),
+(12, 'hugo.lim@etu.imt-lille-douai.fr', 'LIM.Hugo', '2000-01-12', 'M', 'LIM', 'Hugo'),
+(13, 'johan.gaudin@etu.imt-lille-douai.fr', 'Johan', '1999-01-13', 'M', 'GAUDIN', 'Johan'),
+(14, 'julia.zink@etu.imt-lille-douai.fr', 'xsz', '2000-01-14', 'F', 'ZINK', 'Julia'),
+(15, 'kanlanfaye.djamoine@etu.imt-lille-douai.fr', 'admin', '1999-01-15', 'M', 'DJAMOINE', 'Kanlanfaye'),
+(16, 'lea.grumiaux@etu.imt-lille-douai.fr', 'bgt', '1999-01-16', 'F', 'GRUMIAUX', 'Léa'),
+(17, 'lucas.arib@etu.imt-lille-douai.fr', 'azerty', '2000-01-17', 'M', 'ARIB', 'Lucas'),
+(18, 'mathis.jolivel@etu.imt-lille-douai.fr', 'dfd@zehj', '2000-01-18', 'M', 'JOLIVEL', 'Mathis'),
+(19, 'maxime.de.veyrac@etu.imt-lille-douai.fr', 'qwerty', '2000-01-19', 'M', 'DE VEYRAC', 'Maxime'),
+(20, 'mekki.ben.hamidouche@etu.imt-lille-douai.fr', 'cde', '2000-01-20', 'M', 'BEN HAMIDOUCHE', 'Mekki'),
+(21, 'nilavan.deva@etu.imt-lille-douai.fr', 'admin', '2000-01-21', 'M', 'DEVA', 'Nilavan'),
+(22, 'pierre.martin@etu.imt-lille-douai.fr', 'fvr', '1998-01-22', 'M', 'MARTIN', 'Pierre'),
+(23, 'r', 'r', '2000-11-02', 'bot', 'r', 'r'),
+(24, 'riri', 'fifi', '2000-11-02', 'bot', 'riri', 'fifi'),
+(25, 'sacha.sicoli@etu.imt-lille-douai.fr', 'Sacha', '2001-01-23', 'F', 'SICOLI', 'Sacha'),
+(26, 'tanguy.feenstra@etu.imt-lille-douai.fr', 'Tanguy', '2000-01-24', 'M', 'FEENSTRA', 'Tanguy'),
+(27, 'testForDelete', 'a', '2000-01-25', 'a', 'a', 'a'),
+(28, 'william.nguyen@etu.imt-lille-douai.fr', '123', '2000-01-26', 'M', 'NGUYEN', 'William'),
+(29, 'zdscs', 'ddee', '2000-11-02', 'bot', 'b', 'a'),
+(30, 'a', 'a', '2022-03-01', 'a', 'a', 'a');
 
 --
 -- Contraintes pour les tables déchargées
@@ -35533,7 +35538,7 @@ ALTER TABLE `contenir`
 -- Contraintes pour la table `pratiquer`
 --
 ALTER TABLE `pratiquer`
-  ADD CONSTRAINT `Est_pratiqué_par` FOREIGN KEY (`login`) REFERENCES `utilisateur` (`login`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `Est_pratiqué_par` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`) ON UPDATE CASCADE,
   ADD CONSTRAINT `Pratique` FOREIGN KEY (`id_sport`) REFERENCES `sport` (`id_sport`) ON UPDATE CASCADE;
 
 --
@@ -35541,7 +35546,7 @@ ALTER TABLE `pratiquer`
 --
 ALTER TABLE `repas`
   ADD CONSTRAINT `Est_catégorisé_par` FOREIGN KEY (`id_type_repas`) REFERENCES `type_repas` (`id_type_repas`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `Est_consommé_par` FOREIGN KEY (`login`) REFERENCES `utilisateur` (`login`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `Est_consommé_par` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -22,7 +22,7 @@
         $nom = $connection->real_escape_string($_POST['nom']);
         $prenom = $connection->real_escape_string($_POST['prenom']);
 
-        $query = "INSERT INTO utilisateur (login, mot_de_passe, date_de_naissance, genre, nom, prenom) VALUES ('$login', '$mot_de_passe', '$date_de_naissance', '$genre', '$nom', '$prenom')";
+        $query = "INSERT INTO utilisateur (id_utilisateur, login, mot_de_passe, date_de_naissance, genre, nom, prenom) VALUES (NULL, '$login', '$mot_de_passe', '$date_de_naissance', '$genre', '$nom', '$prenom')";
         $result = $connection->query($query);
 
         if($result){
