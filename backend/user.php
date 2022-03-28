@@ -39,8 +39,6 @@
         $mot_de_passe_bdd = $result->fetch_row()[0];
 
         if($mot_de_passe == $mot_de_passe_bdd){
-            session_start();
-            $_SESSION['login'] = $login;
             echo true;
         }
     }
