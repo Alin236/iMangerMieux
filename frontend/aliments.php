@@ -24,12 +24,12 @@ $(document).ready(function() {
     $('#example').DataTable( {
         ajax: {
         url: '../backend/aliments.php',
-        dataFilter: function(data){
-            var json = jQuery.parseJSON( data );
+        /*dataFilter: function(data){
+            //var json = jQuery.parseJSON( data );
+            return data["data"];
  
-            return JSON.parse( data);
-            // return JSON string
-        }
+            //return JSON.stringify( json ); // return JSON string
+        }*/
     },
         
         processing: true,
