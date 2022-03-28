@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 25 mars 2022 à 09:29
+-- Généré le : lun. 28 mars 2022 à 07:27
 -- Version du serveur : 5.7.36
 -- Version de PHP : 8.0.16
 
@@ -35459,7 +35459,7 @@ DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `login` varchar(50) NOT NULL,
   `mot_de_passe` varchar(50) NOT NULL,
-  `age` int(11) NOT NULL,
+  `date_de_naissance` date NOT NULL,
   `genre` varchar(50) NOT NULL,
   `nom` varchar(40) NOT NULL,
   `prenom` varchar(40) NOT NULL,
@@ -35470,33 +35470,33 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`login`, `mot_de_passe`, `age`, `genre`, `nom`, `prenom`) VALUES
-('alexandre.favreau@etu.imt-lille-douai.fr', 'wqa', 21, 'M', 'FAVREAU', 'Alexandre'),
-('alexis.poirot@etu.imt-lille-douai.fr', 'root', 21, 'M', 'POIROT', 'Alexis'),
-('anthony.gouthier@etu.imt-lille-douai.fr', '4444', 21, 'M', 'GOUTHIER', 'Anthony'),
-('antoine.lambert@etu.imt-lille-douai.fr', '456', 22, 'M', 'LAMBERT', 'Antoine'),
-('armand.sumo@etu.imt-lille-douai.fr', 'shtrdg', 22, 'M', 'SUMO MOUDJIE TCHAMABE', 'Armand'),
-('cedric.prast@etu.imt-lille-douai.fr', '789', 21, 'M', 'PRAST', 'Cédric'),
-('emil.perouse@etu.imt-lille-douai.fr', 'nhy', 21, 'M', 'PEROUSE', 'Emil'),
-('ezzat.al.zahabi@etu.imt-lille-douai.fr', 'ss@z2', 23, 'M', 'AL ZAHABI', 'Ezzat'),
-('gaelle.erhart@etu.imt-lille-douai.fr', 'eeee', 21, 'F', 'ERHART', 'Gaelle'),
-('guillaume.faure@etu.imt-lille-douai.fr', 'Aliment', 21, 'M', 'FAURE', 'Guillaume'),
-('hatim.hebboul@etu.imt-lille-douai.fr', 'eujds', 21, 'M', 'HEBBOUL', 'Hatim'),
-('hugo.lim@etu.imt-lille-douai.fr', 'LIM.Hugo', 22, 'M', 'LIM', 'Hugo'),
-('johan.gaudin@etu.imt-lille-douai.fr', 'Johan', 21, 'M', 'GAUDIN', 'Johan'),
-('julia.zink@etu.imt-lille-douai.fr', 'xsz', 21, 'F', 'ZINK', 'Julia'),
-('kanlanfaye.djamoine@etu.imt-lille-douai.fr', 'admin', 22, 'M', 'DJAMOINE', 'Kanlanfaye'),
-('lea.grumiaux@etu.imt-lille-douai.fr', 'bgt', 21, 'F', 'GRUMIAUX', 'Léa'),
-('lucas.arib@etu.imt-lille-douai.fr', 'azerty', 21, 'M', 'ARIB', 'Lucas'),
-('mathis.jolivel@etu.imt-lille-douai.fr', 'dfd@zehj', 22, 'M', 'JOLIVEL', 'Mathis'),
-('maxime.de.veyrac@etu.imt-lille-douai.fr', 'qwerty', 21, 'M', 'DE VEYRAC', 'Maxime'),
-('mekki.ben.hamidouche@etu.imt-lille-douai.fr', 'cde', 21, 'M', 'BEN HAMIDOUCHE', 'Mekki'),
-('nilavan.deva@etu.imt-lille-douai.fr', 'admin', 21, 'M', 'DEVA', 'Nilavan'),
-('pierre.martin@etu.imt-lille-douai.fr', 'fvr', 22, 'M', 'MARTIN', 'Pierre'),
-('sacha.sicoli@etu.imt-lille-douai.fr', 'Sacha', 20, 'F', 'SICOLI', 'Sacha'),
-('tanguy.feenstra@etu.imt-lille-douai.fr', 'Tanguy', 22, 'M', 'FEENSTRA', 'Tanguy'),
-('testForDelete', 'a', 1, 'a', 'a', 'a'),
-('william.nguyen@etu.imt-lille-douai.fr', '123', 21, 'M', 'NGUYEN', 'William');
+INSERT INTO `utilisateur` (`login`, `mot_de_passe`, `date_de_naissance`, `genre`, `nom`, `prenom`) VALUES
+('alexandre.favreau@etu.imt-lille-douai.fr', 'wqa', '2000-01-01', 'M', 'FAVREAU', 'Alexandre'),
+('alexis.poirot@etu.imt-lille-douai.fr', 'root', '2000-01-02', 'M', 'POIROT', 'Alexis'),
+('anthony.gouthier@etu.imt-lille-douai.fr', '4444', '2000-01-03', 'M', 'GOUTHIER', 'Anthony'),
+('antoine.lambert@etu.imt-lille-douai.fr', '456', '1999-01-04', 'M', 'LAMBERT', 'Antoine'),
+('armand.sumo@etu.imt-lille-douai.fr', 'shtrdg', '2000-01-05', 'M', 'SUMO MOUDJIE TCHAMABE', 'Armand'),
+('cedric.prast@etu.imt-lille-douai.fr', '789', '1998-01-06', 'M', 'PRAST', 'Cédric'),
+('emil.perouse@etu.imt-lille-douai.fr', 'nhy', '2000-01-07', 'M', 'PEROUSE', 'Emil'),
+('ezzat.al.zahabi@etu.imt-lille-douai.fr', 'ss@z2', '2000-01-08', 'M', 'AL ZAHABI', 'Ezzat'),
+('gaelle.erhart@etu.imt-lille-douai.fr', 'eeee', '2000-01-09', 'F', 'ERHART', 'Gaelle'),
+('guillaume.faure@etu.imt-lille-douai.fr', 'Aliment', '2001-01-10', 'M', 'FAURE', 'Guillaume'),
+('hatim.hebboul@etu.imt-lille-douai.fr', 'eujds', '2000-01-11', 'M', 'HEBBOUL', 'Hatim'),
+('hugo.lim@etu.imt-lille-douai.fr', 'LIM.Hugo', '2000-01-12', 'M', 'LIM', 'Hugo'),
+('johan.gaudin@etu.imt-lille-douai.fr', 'Johan', '1999-01-13', 'M', 'GAUDIN', 'Johan'),
+('julia.zink@etu.imt-lille-douai.fr', 'xsz', '2000-01-14', 'F', 'ZINK', 'Julia'),
+('kanlanfaye.djamoine@etu.imt-lille-douai.fr', 'admin', '1999-01-15', 'M', 'DJAMOINE', 'Kanlanfaye'),
+('lea.grumiaux@etu.imt-lille-douai.fr', 'bgt', '1999-01-16', 'F', 'GRUMIAUX', 'Léa'),
+('lucas.arib@etu.imt-lille-douai.fr', 'azerty', '2000-01-17', 'M', 'ARIB', 'Lucas'),
+('mathis.jolivel@etu.imt-lille-douai.fr', 'dfd@zehj', '2000-01-18', 'M', 'JOLIVEL', 'Mathis'),
+('maxime.de.veyrac@etu.imt-lille-douai.fr', 'qwerty', '2000-01-19', 'M', 'DE VEYRAC', 'Maxime'),
+('mekki.ben.hamidouche@etu.imt-lille-douai.fr', 'cde', '2000-01-20', 'M', 'BEN HAMIDOUCHE', 'Mekki'),
+('nilavan.deva@etu.imt-lille-douai.fr', 'admin', '2000-01-21', 'M', 'DEVA', 'Nilavan'),
+('pierre.martin@etu.imt-lille-douai.fr', 'fvr', '1998-01-22', 'M', 'MARTIN', 'Pierre'),
+('sacha.sicoli@etu.imt-lille-douai.fr', 'Sacha', '2001-01-23', 'F', 'SICOLI', 'Sacha'),
+('tanguy.feenstra@etu.imt-lille-douai.fr', 'Tanguy', '2000-01-24', 'M', 'FEENSTRA', 'Tanguy'),
+('testForDelete', 'a', '2000-01-25', 'a', 'a', 'a'),
+('william.nguyen@etu.imt-lille-douai.fr', '123', '2000-01-26', 'M', 'NGUYEN', 'William');
 
 --
 -- Contraintes pour les tables déchargées
