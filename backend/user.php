@@ -51,7 +51,6 @@
 
     // fonction inutilisé ?
     function getProfil($connection){
-        $id_utilisateur = $_SESSION['id_utilisateur'];
 
         $query = "SELECT nom, prenom, login, date_de_naissance FROM utilisateur WHERE id_utilisateur = $id_utilisateur";
         $result = $connection->query($query);
