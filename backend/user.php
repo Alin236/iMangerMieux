@@ -10,7 +10,7 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(isset($_POST['login']) && isset($_POST['mot_de_passe'])){
-            connectUser($connection);
+            verifyUser($connection);
         }
     }
 
@@ -36,7 +36,7 @@
         }
     }
 
-    function connectUser($connection){
+    function verifyUser($connection){
         $login = $connection->real_escape_string($_POST['login']);
         $mot_de_passe = $connection->real_escape_string($_POST['mot_de_passe']);
 
@@ -50,7 +50,7 @@
     }
 
     // fonction inutilisé ?
-    function getProfil($connection){
+    function getUser($connection){
 
         $query = "SELECT nom, prenom, login, date_de_naissance FROM utilisateur WHERE id_utilisateur = $id_utilisateur";
         $result = $connection->query($query);
