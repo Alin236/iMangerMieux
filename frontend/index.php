@@ -1,4 +1,4 @@
-<?php 
+<?php
     require_once('template_header.php');
 ?>
     <div class="container">
@@ -14,7 +14,7 @@
                 renderMenuToHTML($currentPageId);
             ?>
         </div>
-        <section class="contenu">
+        <section class="container-fluid">
             <?php
                 $pageToInclude = "$currentPageId.php";
                 if(is_readable($pageToInclude))

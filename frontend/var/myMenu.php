@@ -5,6 +5,7 @@ $myMenu = array(
     'accueil' => array( 'Accueil' ),
     'connection' => array( 'Connexion' ),
     'aliments' => array( 'aliments' ),
-    'newAccount' => array( 'Créer un nouveau compte')
+    'newAccount' => array( 'Créer un nouveau compte'),
+    'profil' => array('Profil')
 );
 ?>
