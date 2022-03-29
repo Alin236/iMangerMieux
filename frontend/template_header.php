@@ -1,11 +1,16 @@
 <?php
     session_start();
-    $connection;
+    $_SESSION['id_utilisateur'] = 24;
+    $_SESSION['nom'] = 'riri';
+    $_SESSION['prenom'] = 'fifi';
+    $_SESSION['mail'] = 'riri@etu.imt-lille-douai.fr';
+    $_SESSION['date_de_naissance'] = '2000-11-02';
+    $textConnection;
     if(isset($_SESSION['login'])){
-        $connection = '<p>Bienvenue '.$_SESSION['login'].'</p>';
+        $textConnection = '<p>Bienvenue '.$_SESSION['login'].'</p>';
     }
     else{
-        $connection = '<a href="http://imangermieux/frontend/index.php?page=connection">Connexion</a>';
+        $textConnection = '<a href="http://imangermieux/frontend/index.php?page=connection">Connexion</a>';
     }
 ?>
 <!DOCTYPE HTML>
@@ -21,4 +26,4 @@
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
-    <header><h1>iMangerMieux</h1>$connection</header>
+    <header><h1>iMangerMieux</h1>$textConnection</header>
