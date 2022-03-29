@@ -26,4 +26,4 @@
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
-    <header><h1>iMangerMieux</h1>$textConnection</header>
+    <header><h1>iMangerMieux</h1><?php echo $textConnection ?></header>
