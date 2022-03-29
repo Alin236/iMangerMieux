@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 28 mars 2022 à 10:23
+-- Généré le : mar. 29 mars 2022 à 12:52
 -- Version du serveur : 5.7.36
 -- Version de PHP : 8.0.16
 
@@ -35439,14 +35439,16 @@ CREATE TABLE IF NOT EXISTS `type_repas` (
   `id_type_repas` int(11) NOT NULL AUTO_INCREMENT,
   `libelle_repas` varchar(50) NOT NULL,
   PRIMARY KEY (`id_type_repas`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `type_repas`
 --
 
 INSERT INTO `type_repas` (`id_type_repas`, `libelle_repas`) VALUES
-(1, 'Dîner');
+(1, 'Petit déjeuner'),
+(2, 'Déjeuner'),
+(3, 'Dîner');
 
 -- --------------------------------------------------------
 
@@ -35465,7 +35467,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `prenom` varchar(40) NOT NULL,
   PRIMARY KEY (`id_utilisateur`),
   UNIQUE KEY `login` (`login`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `utilisateur`
@@ -35495,13 +35497,14 @@ INSERT INTO `utilisateur` (`id_utilisateur`, `login`, `mot_de_passe`, `date_de_n
 (21, 'nilavan.deva@etu.imt-lille-douai.fr', 'admin', '2000-01-21', 'M', 'DEVA', 'Nilavan'),
 (22, 'pierre.martin@etu.imt-lille-douai.fr', 'fvr', '1998-01-22', 'M', 'MARTIN', 'Pierre'),
 (23, 'r', 'r', '2000-11-02', 'bot', 'r', 'r'),
-(24, 'riri', 'fifi', '2000-11-02', 'bot', 'riri', 'fifi'),
+(24, 'riri@etu.imt-lille-douai.fr', 'fifi', '2000-11-02', 'bot', 'riri', 'fifi'),
 (25, 'sacha.sicoli@etu.imt-lille-douai.fr', 'Sacha', '2001-01-23', 'F', 'SICOLI', 'Sacha'),
 (26, 'tanguy.feenstra@etu.imt-lille-douai.fr', 'Tanguy', '2000-01-24', 'M', 'FEENSTRA', 'Tanguy'),
 (27, 'testForDelete', 'a', '2000-01-25', 'a', 'a', 'a'),
 (28, 'william.nguyen@etu.imt-lille-douai.fr', '123', '2000-01-26', 'M', 'NGUYEN', 'William'),
 (29, 'zdscs', 'ddee', '2000-11-02', 'bot', 'b', 'a'),
-(30, 'a', 'a', '2022-03-01', 'a', 'a', 'a');
+(30, 'a', 'a', '2022-03-01', 'a', 'a', 'a'),
+(31, 'riria', 'ddee', '2000-11-02', 'bot', 'b', 'a');
 
 --
 -- Contraintes pour les tables déchargées

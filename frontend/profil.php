@@ -26,6 +26,14 @@
 </div>
 <div class="row">
     <div class="col-3">
+        <label for="genre">Genre :</label>
+    </div>
+    <div class="col">
+        <p id="genre"><?php echo $_SESSION['genre'] ?></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
         <label for="date_de_naissance">Date de naissance :</label>
     </div>
     <div class="col">
@@ -37,6 +45,7 @@
     </div>
     <div class="col">
         <button id="modifier">Modifier</button>
+        <button id="annuler" class="invisible">Annuler</button>
     </div>
 </div>
 
