@@ -1,7 +1,7 @@
 <h2>Profil</h2>
 <h3>Informations</h3>
 <div class="row">
-    <div class="col-2">
+    <div class="col-3">
         <label for="nom">Nom :</label>
     </div>
     <div class="col">
@@ -9,7 +9,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-2">
+    <div class="col-3">
         <label for="prenom">Prénom :</label>
     </div>
     <div class="col">
@@ -17,7 +17,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-2">
+    <div class="col-3">
         <label for="mail">Mail :</label>
     </div>
     <div class="col">
@@ -25,7 +25,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-2">
+    <div class="col-3">
         <label for="date_de_naissance">Date de naissance :</label>
     </div>
     <div class="col">
