@@ -80,8 +80,10 @@ class SSP {
 	{
 		if ( is_array( $conn ) ) {
 			return self::sql_connect( $conn );
+			
 		}
-
+		
+		
 		return $conn;
 	}
 
@@ -103,7 +105,7 @@ class SSP {
 			$limit = "LIMIT ".intval($request['start']).", ".intval($request['length']);
 		}
 
-		return "LIMIT 5";
+		return $limit;
 	}
 
 
@@ -246,6 +248,8 @@ class SSP {
 	{
 		$bindings = array();
 		$db = self::db( $conn );
+		
+
 
 		// Build the SQL query string from the request
 		$limit = self::limit( $request, $columns );
@@ -331,6 +335,7 @@ class SSP {
 		$bindings = array();
 		$whereAllBindings = array();
 		$db = self::db( $conn );
+		
 		$whereAllSql = '';
 
 		// Build the SQL query string from the request
@@ -441,7 +446,7 @@ class SSP {
 				"The error reported by the server was: ".$e->getMessage()
 			);
 		}
-
+		$db->exec("set names utf8mb4");
 		return $db;
 	}
 

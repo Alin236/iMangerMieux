@@ -109,6 +109,13 @@
               <form id="add-form" name="add-form" class="form-horizontal">
                  <input type="hidden" class="form-control" id="mode" name="mode" value="add">
                  <div class="form-group">
+                      <label for="id" class="col-sm-2 control-label">ID liment</label>
+                      <div class="col-sm-12">
+                          <input type="text" class="form-control" id="id" name="id" placeholder="Entrer l'Id de l'aliment" value="" maxlength="50" required="">
+                      </div>
+                  </div>
+
+                 <div class="form-group">
                       <label for="nom" class="col-sm-2 control-label">Nom de l'aliment</label>
                       <div class="col-sm-12">
                           <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrer le nom de l'aliment" value="" maxlength="50" required="">

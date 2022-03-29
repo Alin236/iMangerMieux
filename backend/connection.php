@@ -7,6 +7,7 @@
 
     //On établit la connexion
     $connection = new mysqli($servername, $username, $password, $database);
+    
 
     //On vérifie la connexion
     if($connection->connect_error){
