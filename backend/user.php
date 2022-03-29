@@ -14,6 +14,12 @@
         }
     }
 
+    if($_SERVER['REQUEST_METHOD'] == 'PUT'){
+        if(isset($_GET['id_utilisateur']) && isset($_GET['login']) && isset($_GET['date_de_naissance']) && isset($_GET['genre']) && isset($_GET['nom']) && isset($_GET['prenom'])){
+            editUser($connection);
+        }
+    }
+
     function createUser($connection){
         $login = $connection->real_escape_string($_POST['login']);
         $mot_de_passe = $connection->real_escape_string($_POST['mot_de_passe']);
@@ -43,6 +49,7 @@
         }
     }
 
+    // fonction inutilisé ?
     function getProfil($connection){
         $id_utilisateur = $_SESSION['id_utilisateur'];
 
@@ -50,5 +57,19 @@
         $result = $connection->query($query);
 
         echo json_encode($result->fetch_all());
+    }
+
+    function editUser($connection){
+        $id_utilisateur = $connection->real_escape_string($_GET['id_utilisateur']);
+        $login = $connection->real_escape_string($_GET['login']);
+        $date_de_naissance = $connection->real_escape_string($_GET['date_de_naissance']);
+        $genre = $connection->real_escape_string($_GET['genre']);
+        $nom = $connection->real_escape_string($_GET['nom']);
+        $prenom = $connection->real_escape_string($_GET['prenom']);
+
+        $query = "UPDATE utilisateur SET login = '$login', date_de_naissance = '$date_de_naissance', genre = '$genre', nom = '$nom', prenom = '$prenom' WHERE utilisateur.id_utilisateur = $id_utilisateur";
+        $result = $connection->query($query);
+
+        echo $result;
     }
 ?>
