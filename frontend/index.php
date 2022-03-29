@@ -1,4 +1,10 @@
-<?php 
+<?php
+    session_start();
+    $_SESSION['id_utilisateur'] = 24;
+    $_SESSION['nom'] = 'riri';
+    $_SESSION['prenom'] = 'fifi';
+    $_SESSION['mail'] = 'riri@etu.imt-lille-douai.fr';
+    $_SESSION['date_de_naissance'] = '2000-11-02';
     require_once('template_header.php');
 ?>
     <div class="container">
