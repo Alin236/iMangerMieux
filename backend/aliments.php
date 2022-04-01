@@ -18,10 +18,15 @@
  */
  
 // DB table to use
-$table = 'aliment';
+$table = "(SELECT aliment.id_aliment, aliment.nom_aliment,type_aliment.libelle_type_aliment as type_aliment
+FROM aliment
+JOIN type_aliment ON aliment.id_type_aliment=type_aliment.id_type_aliment) as temp";
  
 // Table's primary key
 $primaryKey = 'id_aliment';
+
+
+
  
 // Array of database columns which should be read and sent back to DataTables.
 // The `db` parameter represents the column name in the database, while the `dt`
@@ -30,7 +35,7 @@ $primaryKey = 'id_aliment';
 $columns = array(
     array( 'db' => 'id_aliment', 'dt' => 0 ),
     array( 'db' => 'nom_aliment',  'dt' => 1 ),
-    array( 'db' => 'id_type_aliment',   'dt' => 2 ),
+    array( 'db' => 'type_aliment',   'dt' => 2 ),
     array( 
         'db'        => 'id_aliment',
         'dt'        => 3, 
@@ -39,6 +44,8 @@ $columns = array(
         } 
     ) 
 ); 
+
+
 
  
 // SQL server connection information

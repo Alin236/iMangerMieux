@@ -38,7 +38,7 @@
                         <tr>
                             <th>Id de l'aliment</th>
                             <th>Nom de l'aliment </th>
-                            <th>ID type aliment </th>
+                            <th>Type aliment </th>
                             <th>Action </th>
 
                             
@@ -48,7 +48,7 @@
                         <tr>
                             <th>Id de l'aliment</th>
                             <th>Nom de l'aliment </th>
-                            <th>ID type aliment </th>
+                            <th>Type aliment </th>
                             <th>Action </th>
                         </tr>
 

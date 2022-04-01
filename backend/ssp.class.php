@@ -259,7 +259,7 @@ class SSP {
 		// Main query to actually get the data
 		$data = self::sql_exec( $db, $bindings,
 			"SELECT `".implode("`, `", self::pluck($columns, 'db'))."`
-			 FROM `$table`
+			 FROM $table
 			 $where
 			 $order
 			 $limit"
@@ -268,7 +268,7 @@ class SSP {
 		// Data set length after filtering
 		$resFilterLength = self::sql_exec( $db, $bindings,
 			"SELECT COUNT(`{$primaryKey}`)
-			 FROM   `$table`
+			 FROM   $table
 			 $where"
 		);
 		$recordsFiltered = $resFilterLength[0][0];
@@ -276,7 +276,7 @@ class SSP {
 		// Total data set length
 		$resTotalLength = self::sql_exec( $db,
 			"SELECT COUNT(`{$primaryKey}`)
-			 FROM   `$table`"
+			 FROM   $table"
 		);
 		$recordsTotal = $resTotalLength[0][0];
 
@@ -292,132 +292,6 @@ class SSP {
 			"data"            => self::data_output( $columns, $data )
 		);
 	}
-
-
-	/**
-	 * The difference between this method and the `simple` one, is that you can
-	 * apply additional `where` conditions to the SQL queries. These can be in
-	 * one of two forms:
-	 *
-	 * * 'Result condition' - This is applied to the result set, but not the
-	 *   overall paging information query - i.e. it will not effect the number
-	 *   of records that a user sees they can have access to. This should be
-	 *   used when you want apply a filtering condition that the user has sent.
-	 * * 'All condition' - This is applied to all queries that are made and
-	 *   reduces the number of records that the user can access. This should be
-	 *   used in conditions where you don't want the user to ever have access to
-	 *   particular records (for example, restricting by a login id).
-	 *
-	 * In both cases the extra condition can be added as a simple string, or if
-	 * you are using external values, as an assoc. array with `condition` and
-	 * `bindings` parameters. The `condition` is a string with the SQL WHERE
-	 * condition and `bindings` is an assoc. array of the binding names and
-	 * values.
-	 *
-	 *  @param  array $request Data sent to server by DataTables
-	 *  @param  array|PDO $conn PDO connection resource or connection parameters array
-	 *  @param  string $table SQL table to query
-	 *  @param  string $primaryKey Primary key of the table
-	 *  @param  array $columns Column information array
-	 *  @param  string|array $whereResult WHERE condition to apply to the result set
-	 *  @param  string|array $whereAll WHERE condition to apply to all queries
-	 *  @return array          Server-side processing response array
-	 */
-	static function complex (
-		$request,
-		$conn,
-		$table,
-		$primaryKey,
-		$columns,
-		$whereResult=null,
-		$whereAll=null
-	) {
-		$bindings = array();
-		$whereAllBindings = array();
-		$db = self::db( $conn );
-		
-		$whereAllSql = '';
-
-		// Build the SQL query string from the request
-		$limit = self::limit( $request, $columns );
-		$order = self::order( $request, $columns );
-		$where = self::filter( $request, $columns, $bindings );
-
-		// whereResult can be a simple string, or an assoc. array with a
-		// condition and bindings
-		if ( $whereResult ) {
-			$str = $whereResult;
-
-			if ( is_array($whereResult) ) {
-				$str = $whereResult['condition'];
-
-				if ( isset($whereResult['bindings']) ) {
-					self::add_bindings($bindings, $whereResult['bindings']);
-				}
-			}
-
-			$where = $where ?
-				$where .' AND '.$str :
-				'WHERE '.$str;
-		}
-
-		// Likewise for whereAll
-		if ( $whereAll ) {
-			$str = $whereAll;
-
-			if ( is_array($whereAll) ) {
-				$str = $whereAll['condition'];
-
-				if ( isset($whereAll['bindings']) ) {
-					self::add_bindings($whereAllBindings, $whereAll['bindings']);
-				}
-			}
-
-			$where = $where ?
-				$where .' AND '.$str :
-				'WHERE '.$str;
-
-			$whereAllSql = 'WHERE '.$str;
-		}
-
-		// Main query to actually get the data
-		$data = self::sql_exec( $db, $bindings,
-			"SELECT `".implode("`, `", self::pluck($columns, 'db'))."`
-			 FROM `$table`
-			 $where
-			 $order
-			 $limit"
-		);
-
-		// Data set length after filtering
-		$resFilterLength = self::sql_exec( $db, $bindings,
-			"SELECT COUNT(`{$primaryKey}`)
-			 FROM   `$table`
-			 $where"
-		);
-		$recordsFiltered = $resFilterLength[0][0];
-
-		// Total data set length
-		$resTotalLength = self::sql_exec( $db, $whereAllBindings,
-			"SELECT COUNT(`{$primaryKey}`)
-			 FROM   `$table` ".
-			$whereAllSql
-		);
-		$recordsTotal = $resTotalLength[0][0];
-
-		/*
-		 * Output
-		 */
-		return array(
-			"draw"            => isset ( $request['draw'] ) ?
-				intval( $request['draw'] ) :
-				0,
-			"recordsTotal"    => intval( $recordsTotal ),
-			"recordsFiltered" => intval( $recordsFiltered ),
-			"data"            => self::data_output( $columns, $data )
-		);
-	}
-
 
 	/**
 	 * Connect to the database
