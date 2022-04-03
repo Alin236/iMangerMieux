@@ -39,7 +39,7 @@
         $login = $connection->real_escape_string($_POST['login']);
         $mot_de_passe = $connection->real_escape_string($_POST['mot_de_passe']);
 
-        $query = "SELECT id_utilisateur, nom, prenom, genre, date_de_naissance FROM utilisateur WHERE login = '$login' AND mot_de_passe='$mot_de_passe'";
+        $query = "SELECT id_utilisateur, nom, prenom, login, genre, date_de_naissance FROM utilisateur WHERE login = '$login' AND mot_de_passe='$mot_de_passe'";
         $result = $connection->query($query);
         $user = $result->fetch_all();
 
