@@ -3,14 +3,15 @@
     // $connection
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        if(isset($_POST['login']) && isset($_POST['mot_de_passe']) && isset($_POST['date_de_naissance']) && isset($_POST['genre']) && isset($_POST['nom']) && isset($_POST['prenom'])){
-            createUser($connection);
-        }
-    }
-
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(isset($_POST['login']) && isset($_POST['mot_de_passe'])){
-            authenticationUser($connection);
+            if(isset($_POST['date_de_naissance']) && isset($_POST['genre']) && isset($_POST['nom']) && isset($_POST['prenom'])){
+                if(createUser($connection)){
+                    authenticationUser($connection);
+                };
+            }
+            else{
+                authenticationUser($connection);
+            }
         }
     }
 
@@ -31,9 +32,7 @@
         $query = "INSERT INTO utilisateur (id_utilisateur, login, mot_de_passe, date_de_naissance, genre, nom, prenom) VALUES (NULL, '$login', '$mot_de_passe', '$date_de_naissance', '$genre', '$nom', '$prenom')";
         $result = $connection->query($query);
 
-        if($result){
-            echo $connection->insert_id;
-        }
+        return $result;
     }
 
     function authenticationUser($connection){
