@@ -3,7 +3,7 @@
 require("connection.php");
 $request = mysqli_real_escape_string($connection, $_POST["query"]);
 $query = "
- SELECT * FROM type_aliment WHERE libelle_type_aliment LIKE '%".$request."%'
+ SELECT * FROM type_repas WHERE libelle_repas LIKE '%".$request."%'
 ";
 
 $result = mysqli_query($connection, $query);
