@@ -1,4 +1,4 @@
-<h2>Profil</h2>
+<h2 class="text-center">Profil</h2>
 <h3>Informations</h3>
 <div class="row d-none">
     <div class="col-3">
