@@ -14,7 +14,7 @@ if(mysqli_num_rows($result) > 0)
 {
  while($row = mysqli_fetch_assoc($result))
  {
-  $data[] = $row["libelle_type_aliment"];
+  $data[] = $row["nom_aliment"];
  }
  echo json_encode($data);
 }
