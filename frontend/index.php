@@ -14,6 +14,7 @@
                 renderMenuToHTML($currentPageId);
             ?>
         </div>
+        </div>
         <section class="container-fluid">
             <?php
                 $pageToInclude = "$currentPageId.php";
@@ -23,5 +24,5 @@
                     require_once("error.php");
             ?>
         </section>
-    </div>
+    
 <?php require_once('template_footer.php')?>

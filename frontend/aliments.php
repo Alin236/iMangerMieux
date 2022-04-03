@@ -10,6 +10,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js">
+    </script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
@@ -38,7 +41,7 @@
                         <tr>
                             <th>Id de l'aliment</th>
                             <th>Nom de l'aliment </th>
-                            <th>Type aliment </th>
+                            <th>ID type aliment </th>
                             <th>Action </th>
 
                             
@@ -48,7 +51,7 @@
                         <tr>
                             <th>Id de l'aliment</th>
                             <th>Nom de l'aliment </th>
-                            <th>Type aliment </th>
+                            <th>ID type aliment </th>
                             <th>Action </th>
                         </tr>
 
@@ -76,18 +79,18 @@
                   <div class="form-group">
                       <label for="nom" class="col-sm-2 control-label">Nom de l'aliment</label>
                       <div class="col-sm-12">
-                          <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrer nom de l'aliment" value="" maxlength="50" required="">
+                          <input type="text" class="form-control" autocomplete="off" id="nom" name="nom" placeholder="Entrer nom de l'aliment" value="" maxlength="50" required="">
                       </div>
                   </div>
 
                   <div class="form-group">
                       <label class="col-sm-2 control-label">Type d'aliment</label>
                       <div class="col-sm-12">
-                          <input type="type" class="form-control" id="type" name="type" placeholder="Entrer le type d'aliment" value="" required="">
+                          <input type="text" class="form-control" autocomplete="off" id="typeupd" name="type" placeholder="Entrer le type d'aliment" value="" required="">
                       </div>
                   </div>
                   <div class="col-sm-offset-2 col-sm-10">
-                   <button type="submit" class="btn btn-primary" id="btn-save" value="create">Save changes
+                   <button type="submit" class="btn btn-primary" id="btn-save" value="create">Update
                    </button>
                   </div>
               </form>
@@ -109,27 +112,45 @@
               <form id="add-form" name="add-form" class="form-horizontal">
                  <input type="hidden" class="form-control" id="mode" name="mode" value="add">
                  <div class="form-group">
-                      <label for="id" class="col-sm-2 control-label">ID liment</label>
+                      <strong for="id" class="col-sm-2 control-label">ID liment</strong>
                       <div class="col-sm-12">
-                          <input type="text" class="form-control" id="id" name="id" placeholder="Entrer l'Id de l'aliment" value="" maxlength="50" required="">
+                          <input type="text" class="form-control" autocomplete="off" id="id" name="id" placeholder="Entrer l'Id de l'aliment" value="" maxlength="50" required="">
                       </div>
                   </div>
 
                  <div class="form-group">
-                      <label for="nom" class="col-sm-2 control-label">Nom de l'aliment</label>
+                      <strong for="nom" class="col-sm-2 control-label">Nom de l'aliment</strong>
                       <div class="col-sm-12">
-                          <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrer le nom de l'aliment" value="" maxlength="50" required="">
+                          <input type="text" class="form-control" autocomplete="off" id="nom" name="nom" placeholder="Entrer le nom de l'aliment" value="" maxlength="50" required="">
                       </div>
                   </div>
 
                   <div class="form-group">
-                      <label class="col-sm-2 control-label">Type d'aliment</label>
+                      <strong class="col-sm-2 control-label">Type d'aliment</strong>
                       <div class="col-sm-12">
-                          <input type="type" class="form-control" id="type" name="type" placeholder="Entrer le type d'aliment" value="" required="">
+                            
+                          <input type="text"  
+                             class="form-control " id="typeadd" name="type" placeholder="Entrer le type d'aliment" value="" required="">
                       </div>
                   </div>
+                  <div class="form-group">
+                      <strong class="col-sm-2 control-label">Proteine</strong>    
+                      <input class="" type="text" name="input_portion" id="input_portion" maxlength="5" size="6" style="vertical-align:middle"> (g) 
+                  </div>
+                  <div class="form-group">
+                      <strong class="col-sm-2 control-label">Calcium</strong>    
+                      <input class="" type="text" name="input_portion" id="input_portion" maxlength="5" size="6" style="vertical-align:middle"> (g) 
+                  </div>
+                  <div class="form-group">
+                      <strong class="col-sm-2 control-label">Vitamine A</strong>    
+                      <input class="" type="text" name="input_portion" id="input_portion" maxlength="5" size="6" style="vertical-align:middle"> (g) 
+                  </div>
+                  <div class="form-group">
+                      <strong class="col-sm-2 control-label">Vitamine C</strong>    
+                      <input class="" type="text" name="input_portion" id="input_portion" maxlength="5" size="6" style="vertical-align:middle"> (g) 
+                  </div>
                   <div class="col-sm-offset-2 col-sm-10">
-                   <button type="submit" class="btn btn-primary" id="btn-save" value="create">Save changes
+                   <button type="submit" class="btn btn-primary" id="btn-save" value="create">Ajouter
                    </button>
                   </div>
               </form>
@@ -163,6 +184,49 @@ $(document).ready(function() {
 
 });
 
+ /** Suggestions d'aliments dans le champs Type d'aliment du form add */
+ 
+ $('#typeadd').typeahead({
+  
+  source: function(query, result)
+  {
+   $.ajax({
+    url:"../backend/searchtypealiment.php",
+    method:"POST",
+    data:{query:query},
+    dataType:"json",
+    success:function(data)
+    {
+        result(data);
+
+    }
+   })
+  },
+  showHintOnFocus:'all'
+ });
+
+ /** Suggestions d'aliments dans le champs Type d'aliment du form update */
+
+ $('#typeupd').typeahead({
+  
+  source: function(query, result)
+  {
+   $.ajax({
+    url:"../backend/searchtypealiment.php",
+    method:"POST",
+    data:{query:query},
+    dataType:"json",
+    success:function(data)
+    {
+        result(data);
+
+    }
+   })
+  },
+  showHintOnFocus:'all'
+ });
+
+ 
 
 
 /*  add user model */
@@ -203,7 +267,7 @@ $('body').on('click', '.btn-edit', function () {
         success: function(result){
           $('#id').val(result.id_aliment);
           $('#nom').val(result.nom_aliment);
-          $('#type').val(result.id_type_aliment);
+          $('#typeupd').val(result.type_aliment);
           $('#edit-modal').modal('show');
         }
     });
