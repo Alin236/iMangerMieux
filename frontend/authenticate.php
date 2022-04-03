@@ -7,4 +7,4 @@
 </form>
 <a href="http://imangermieux/frontend/index.php?page=newAccount">Créer un nouveau compte</a>
 
-<script type="text/javascript" src="js/connection.js"></script>
+<script type="text/javascript" src="js/authenticate.js"></script>

@@ -14,7 +14,7 @@
                     }
                 }
                 else{
-                    $currentPageId = 'connection';
+                    $currentPageId = 'authenticate';
                 }
                 renderMenuToHTML($currentPageId);
             ?>
