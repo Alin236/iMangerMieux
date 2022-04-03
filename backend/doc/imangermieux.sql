@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 29 mars 2022 à 12:52
+-- Généré le : dim. 03 avr. 2022 à 20:51
 -- Version du serveur : 5.7.36
 -- Version de PHP : 8.0.16
 
@@ -35439,7 +35439,7 @@ CREATE TABLE IF NOT EXISTS `type_repas` (
   `id_type_repas` int(11) NOT NULL AUTO_INCREMENT,
   `libelle_repas` varchar(50) NOT NULL,
   PRIMARY KEY (`id_type_repas`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `type_repas`
@@ -35448,7 +35448,10 @@ CREATE TABLE IF NOT EXISTS `type_repas` (
 INSERT INTO `type_repas` (`id_type_repas`, `libelle_repas`) VALUES
 (1, 'Petit déjeuner'),
 (2, 'Déjeuner'),
-(3, 'Dîner');
+(3, 'Dîner'),
+(4, 'Goûté du matin'),
+(5, 'Goûté de l\'après-midi'),
+(6, 'Goûté du soir');
 
 -- --------------------------------------------------------
 
@@ -35496,8 +35499,8 @@ INSERT INTO `utilisateur` (`id_utilisateur`, `login`, `mot_de_passe`, `date_de_n
 (20, 'mekki.ben.hamidouche@etu.imt-lille-douai.fr', 'cde', '2000-01-20', 'M', 'BEN HAMIDOUCHE', 'Mekki'),
 (21, 'nilavan.deva@etu.imt-lille-douai.fr', 'admin', '2000-01-21', 'M', 'DEVA', 'Nilavan'),
 (22, 'pierre.martin@etu.imt-lille-douai.fr', 'fvr', '1998-01-22', 'M', 'MARTIN', 'Pierre'),
-(23, 'r', 'r', '2000-11-02', 'bot', 'r', 'r'),
-(24, 'riri@etu.imt-lille-douai.fr', 'fifi', '2000-11-02', 'bot', 'riri', 'fifi'),
+(23, 'r', 'r', '2000-11-02', 'bot', 'r', 'a'),
+(24, 'aaaaaa', 'fifi', '2000-11-02', 'bot', 'r', 'a'),
 (25, 'sacha.sicoli@etu.imt-lille-douai.fr', 'Sacha', '2001-01-23', 'F', 'SICOLI', 'Sacha'),
 (26, 'tanguy.feenstra@etu.imt-lille-douai.fr', 'Tanguy', '2000-01-24', 'M', 'FEENSTRA', 'Tanguy'),
 (27, 'testForDelete', 'a', '2000-01-25', 'a', 'a', 'a'),
