@@ -56,5 +56,12 @@
         <button id="annuler" class="invisible">Annuler</button>
     </div>
 </div>
+<div class="row">
+    <div class="col-3">
+    </div>
+    <div class="col">
+        <button id="deconnecter">Déconnecter</button>
+    </div>
+</div>
 
 <script type="text/javascript" src="js/profil.js"></script>

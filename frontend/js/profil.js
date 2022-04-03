@@ -7,6 +7,7 @@ var date_de_naissance;
 $(document).ready(function() {
     $('#modifier').click(function(){modifier()});
     $('#annuler').click(function(){annuler()});
+    $('#deconnecter').click(function(){deconnecter()});
     nom = $('#nom').html();
     prenom = $('#prenom').html();
     mail = $('#mail').html();
@@ -72,4 +73,13 @@ function makeParameters(url, json){
     });
     url = url.slice(0,-1);
     return url;
+}
+
+function deconnecter(){
+    const disconnect = {'disconnect': true};
+    $.post('session', disconnect, function(){
+        document.location = '/frontend';
+    }, 'json').fail(function(){
+        console.log('Fail : déconnexion de la session');
+    });
 }
