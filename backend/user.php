@@ -10,7 +10,7 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(isset($_POST['login']) && isset($_POST['mot_de_passe'])){
-            verifyUser($connection);
+            authenticationUser($connection);
         }
     }
 
@@ -36,16 +36,16 @@
         }
     }
 
-    function verifyUser($connection){
+    function authenticationUser($connection){
         $login = $connection->real_escape_string($_POST['login']);
         $mot_de_passe = $connection->real_escape_string($_POST['mot_de_passe']);
 
-        $query = "SELECT mot_de_passe FROM utilisateur WHERE login = '$login'";
+        $query = "SELECT id_utilisateur, nom, prenom, genre, date_de_naissance FROM utilisateur WHERE login = '$login' AND mot_de_passe='$mot_de_passe'";
         $result = $connection->query($query);
-        $mot_de_passe_bdd = $result->fetch_row()[0];
+        $user = $result->fetch_all();
 
-        if($mot_de_passe == $mot_de_passe_bdd){
-            echo true;
+        if($user != []){
+            echo json_encode($user);
         }
     }
 
