@@ -6,10 +6,15 @@
             <?php
                 require_once('template_menu.php');
                 $currentPageId = 'accueil';
-                if(isset($_GET['page'])){
-                    $currentPageId = $_GET['page'];
-                    if($currentPageId == 'index')
-                        $currentPageId = 'accueil';
+                if(isset($_SESSION['id_utilisateur'])){
+                    if(isset($_GET['page'])){
+                        $currentPageId = $_GET['page'];
+                        if($currentPageId == 'index')
+                            $currentPageId = 'accueil';
+                    }
+                }
+                else{
+                    $currentPageId = 'connection';
                 }
                 renderMenuToHTML($currentPageId);
             ?>
