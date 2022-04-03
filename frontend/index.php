@@ -14,7 +14,7 @@
     }
     renderMenuToHTML($currentPageId);
 ?>
-    <section class="container-fluid">
+    <section class="container-fluid px-3">
         <?php
             $pageToInclude = "$currentPageId.php";
             if(is_readable($pageToInclude))
