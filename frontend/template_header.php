@@ -2,10 +2,10 @@
     session_start();
     $textConnection;
     if(isset($_SESSION['id_utilisateur'])){
-        $textConnection = '<a href="http://imangermieux/frontend/index.php?page=profil">'.$_SESSION['prenom'].' '.$_SESSION['nom'].'</a>';
+        $textConnection = '<a href="index.php?page=profil">'.$_SESSION['prenom'].' '.$_SESSION['nom'].'</a>';
     }
     else{
-        $textConnection = '<a href="http://imangermieux/frontend/index.php?page=connection">Connexion</a>';
+        $textConnection = '<a href="index.php?page=connection">Connexion</a>';
     }
 ?>
 <!DOCTYPE HTML>
