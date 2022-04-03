@@ -7,8 +7,8 @@
     $_SESSION['genre'] = 'M';
     $_SESSION['date_de_naissance'] = '2000-11-02';
     $textConnection;
-    if(isset($_SESSION['login'])){
-        $textConnection = '<p>Bienvenue '.$_SESSION['login'].'</p>';
+    if(isset($_SESSION['id_utilisateur'])){
+        $textConnection = '<p>Bienvenue '.$_SESSION['prenom'].'</p>';
     }
     else{
         $textConnection = '<a href="http://imangermieux/frontend/index.php?page=connection">Connexion</a>';
