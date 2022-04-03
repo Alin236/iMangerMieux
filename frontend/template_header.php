@@ -17,7 +17,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 </head>
-<body class>
+<body>
     <header>
         <h1 class="text-center">iMangerMieux</h1>
         <p class="text-end mx-4"><?php echo $textConnection ?></p>
