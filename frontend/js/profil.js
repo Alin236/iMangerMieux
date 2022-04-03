@@ -28,7 +28,7 @@ function modifier(){
     }
     else{
         const data = {
-            'id_utilisateur':24,
+            'id_utilisateur': $('#id_utilisateur').html(),
             'login': $('#mail').val(),
             'date_de_naissance': $('#date_de_naissance').val(),
             'genre': $('#genre').val(),
@@ -40,13 +40,15 @@ function modifier(){
             url: makeParameters('/backend/user.php', data),
             dataType: 'json',
             success: function(){
-                nom = data.nom;
-                prenom = data.prenom;
-                mail = data.login;
-                genre = data.genre;
-                date_de_naissance = data.date_de_naissance;
-                annuler();
+                const userInfo = {'id_utilisateur': data.id_utilisateur, 'nom': data.nom, 'prenom': data.prenom, 'mail': data.login, 'genre': data.genre, 'date_de_naissance': data.date_de_naissance};
+                $.post('session', userInfo, function(){
+                    document.location.reload();
+                }, 'json').fail(function(){
+                    console.log('Fail : modification de la session');
+                });
             }
+        }).fail(function(){
+            console.log('Fail : Modification du profil (possiblement un email déjà utilisé)');
         });
     }
 }

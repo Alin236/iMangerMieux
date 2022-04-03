@@ -1,5 +1,13 @@
 <h2>Profil</h2>
 <h3>Informations</h3>
+<div class="row d-none">
+    <div class="col-3">
+        <label for="id_utilisateur">ID :</label>
+    </div>
+    <div class="col">
+        <p id="id_utilisateur"><?php echo $_SESSION['id_utilisateur'] ?></p>
+    </div>
+</div>
 <div class="row">
     <div class="col-3">
         <label for="nom">Nom :</label>
