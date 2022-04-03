@@ -50,7 +50,7 @@
     }
 
     // fonction inutilisé ?
-    function getUser($connection){
+    function getUser($connection, $id_utilisateur){
 
         $query = "SELECT nom, prenom, login, date_de_naissance FROM utilisateur WHERE id_utilisateur = $id_utilisateur";
         $result = $connection->query($query);
