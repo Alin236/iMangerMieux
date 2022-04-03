@@ -6,11 +6,11 @@
         if(isset($_POST['login']) && isset($_POST['mot_de_passe'])){
             if(isset($_POST['date_de_naissance']) && isset($_POST['genre']) && isset($_POST['nom']) && isset($_POST['prenom'])){
                 if(createUser($connection)){
-                    authenticationUser($connection);
+                    authenticateUser($connection);
                 };
             }
             else{
-                authenticationUser($connection);
+                authenticateUser($connection);
             }
         }
     }
@@ -35,7 +35,7 @@
         return $result;
     }
 
-    function authenticationUser($connection){
+    function authenticateUser($connection){
         $login = $connection->real_escape_string($_POST['login']);
         $mot_de_passe = $connection->real_escape_string($_POST['mot_de_passe']);
 
