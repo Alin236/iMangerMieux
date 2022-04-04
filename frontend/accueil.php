@@ -12,6 +12,13 @@
             <input id='jour' value='7'>
         </div>
     </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title text-center">Analyse journalière</h3>
+        </div>
+        <div id="dailyAnalysis" class="card-body d-flex">
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript" src="js/graph.js"></script>
