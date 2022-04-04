@@ -1,7 +1,7 @@
 <h2 class="text-center">Accueil</h2>
 <p id='id_utilisateur' class='d-none'><?php echo $_SESSION['id_utilisateur'] ?></p>
 <div class="row">
-    <div class="col-2">
+    <div class="col-auto">
         <div class="card h-100 shadow">
             <div class="card-header">
                 <h3 class="card-title text-center">Moyenne de fruits et légumes</h3>
@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-    <div class="col">
+    <div class="col-auto">
         <div class="card h-100 shadow">
             <div class="card-header">
                 <h3 class="card-title text-center">Analyse journalière</h3>

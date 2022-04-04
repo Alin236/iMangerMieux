@@ -19,7 +19,7 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
-    <header>
+    <header class="bg-light">
         <h1 class="text-center">iMangerMieux</h1>
-        <p class="text-end mx-4"><?php echo $textConnection ?></p>
+        <p class="text-end m-0 px-4"><?php echo $textConnection ?></p>
     </header>
