@@ -50,3 +50,4 @@ Prendre en compte l'âge, le genre, le sport pratiqué lors des calcules.
 Avoir une personnalisation de l'esthétique de l'application en sauvegardant la préférence de l'utilisateur dans un cookie.
 Permettre à l'utilisateur de chercher des aliments dans la base OpenFoodFact.
 Permettre de définir des aliments comme composés d'autres aliments présent dans la base.
+Factorisation de la configuration : mettre les identifiants de connexion au SGBD dans un fichier /backend/config.php et mettre l'URL du backend dans un fichier /frontend/config.php.
