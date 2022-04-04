@@ -14,12 +14,25 @@ Pour choisir ses repas, l'utilisateur pourra sélectionner l'un des nombreux ali
 
 L'utilisateur possède un compte personnel et donc un journal personnel. De ce fait l'application n'est accessible que pour un utilisateur connecté. Enfin l'utilisateur pourra modifier ses informations personnels dans une page dédiée.
 
-## sécurité
+## Sécurité
 
 Bien que cette application possède un système de compte utilisateur et des informations personnel, nous sommes comcient qu'elle est très peu sécurisée. Cependant la sécurité de l'application ne fait pas parti du cadre de l'UV.
 
-## dashbord
+## Dashbord
 
 Deux graphiques sont actuellement présent dans le dashbord.
 Le premier permet de suivre sa consommation moyenne de fruits et légumes.
-Le deuxième persmet de faire une analyse journalière de sa consommation.
+Le deuxième permet de faire une analyse journalière de sa consommation.
+
+## Structure
+
+L'application est séparé en deux parties, la partie backend et la partie frontend.
+La structure de l'application partie frontend est factorisée dans le fichier index.php.
+
+## Installation
+
+Pour installer cette application en local il faut :
+1 - Cloner le git
+2 - Utiliser un serveur local (dans notre cas, nous avons utilisé WAMP)
+3 - Importer la base de donnée /backend/doc/imangermieux.sql
+4 - Configurer l'accés à la base de donnée dans les fichiers backend/connection.php ligne 3 à 6 et backend/aliment.php ligne 52 à 57.
