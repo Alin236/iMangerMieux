@@ -1,5 +1,4 @@
 <?php
-
 require("connection.php");
 $request = mysqli_real_escape_string($connection, $_POST["query"]);
 $query = "

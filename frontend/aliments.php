@@ -1,32 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- DataTables CSS librairie -->
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"/>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src=
-"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js">
-    </script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-<!-- DataTables JS librairie -->
-<script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-
-    <style type="text/css">
-        .bs-example{
-            margin: 20px;
-        }
-    </style>
-</head>
-
-<body>
     <div class="bs-example">
         <div class="container">
             <div class="row">
@@ -61,7 +33,7 @@
             </div>        
         </div>
     </div>
-</body>
+
 
 
 
@@ -110,13 +82,8 @@
           </div>
           <div class="modal-body">
               <form id="add-form" name="add-form" class="form-horizontal">
+              <input type="hidden" name="id" id="id">
                  <input type="hidden" class="form-control" id="mode" name="mode" value="add">
-                 <div class="form-group">
-                      <strong for="id" class="col-sm-2 control-label">ID liment</strong>
-                      <div class="col-sm-12">
-                          <input type="text" class="form-control" autocomplete="off" id="id" name="id" placeholder="Entrer l'Id de l'aliment" value="" maxlength="50" required="">
-                      </div>
-                  </div>
 
                  <div class="form-group">
                       <strong for="nom" class="col-sm-2 control-label">Nom de l'aliment</strong>
@@ -134,20 +101,24 @@
                       </div>
                   </div>
                   <div class="form-group">
-                      <strong class="col-sm-2 control-label">Proteine</strong>    
-                      <input class="" type="text" name="input_portion" id="input_portion" maxlength="5" size="6" style="vertical-align:middle"> (g) 
+                      <strong class="col-sm-2 control-label">Eau</strong>    
+                      <input class="" type="text" name="eau" id="eau" maxlength="5" size="6" style="vertical-align:middle"> (g/100g) 
                   </div>
                   <div class="form-group">
-                      <strong class="col-sm-2 control-label">Calcium</strong>    
-                      <input class="" type="text" name="input_portion" id="input_portion" maxlength="5" size="6" style="vertical-align:middle"> (g) 
+                      <strong class="col-sm-2 control-label">Sucre</strong>    
+                      <input class="" type="text" name="sucre" id="sucre" maxlength="5" size="6" style="vertical-align:middle"> (g/100g) 
                   </div>
                   <div class="form-group">
-                      <strong class="col-sm-2 control-label">Vitamine A</strong>    
-                      <input class="" type="text" name="input_portion" id="input_portion" maxlength="5" size="6" style="vertical-align:middle"> (g) 
+                      <strong class="col-sm-2 control-label">Sel</strong>    
+                      <input class="" type="text" name="sel" id="sel" maxlength="5" size="6" style="vertical-align:middle"> (g/100g) 
+                  </div>
+                  <div class="form-group">
+                      <strong class="col-sm-2 control-label">Alcool</strong>    
+                      <input class="" type="text" name="alcool" id="alcool" maxlength="5" size="6" style="vertical-align:middle"> (g/100g) 
                   </div>
                   <div class="form-group">
                       <strong class="col-sm-2 control-label">Vitamine C</strong>    
-                      <input class="" type="text" name="input_portion" id="input_portion" maxlength="5" size="6" style="vertical-align:middle"> (g) 
+                      <input class="" type="text" name="vitamine" id="vitamine" maxlength="5" size="6" style="vertical-align:middle"> (mg/100g) 
                   </div>
                   <div class="col-sm-offset-2 col-sm-10">
                    <button type="submit" class="btn btn-primary" id="btn-save" value="create">Ajouter
@@ -176,7 +147,7 @@ $(document).ready(function() {
         "processing": true,
         "serverSide": true,
         "order": [],
-        "ajax": "../backend/aliments.php",
+        "ajax": "/backend/aliments.php",
 
         
     } );
@@ -191,7 +162,7 @@ $(document).ready(function() {
   source: function(query, result)
   {
    $.ajax({
-    url:"../backend/searchtypealiment.php",
+    url:"/backend/searchtypealiment.php",
     method:"POST",
     data:{query:query},
     dataType:"json",
@@ -212,7 +183,7 @@ $(document).ready(function() {
   source: function(query, result)
   {
    $.ajax({
-    url:"../backend/searchtypealiment.php",
+    url:"/backend/searchtypealiment.php",
     method:"POST",
     data:{query:query},
     dataType:"json",
@@ -241,7 +212,7 @@ $('#add-form').submit(function(e){
 
     // ajax
     $.ajax({
-        url:"../backend/add-edit-delete.php",
+        url:"/backend/add-edit-delete.php",
         type: "POST",
         data: $(this).serialize(), // get all form field value in serialize form
         success: function(){
@@ -257,7 +228,7 @@ $('#add-form').submit(function(e){
 $('body').on('click', '.btn-edit', function () {
     var id = $(this).data('id');
      $.ajax({
-        url:"../backend/add-edit-delete.php",
+        url:"/backend/add-edit-delete.php",
         type: "POST",
         data: {
             id: id,
@@ -280,7 +251,7 @@ $('#update-form').submit(function(e){
        
     // ajax
     $.ajax({
-        url:"../backend/add-edit-delete.php",
+        url:"/backend/add-edit-delete.php",
         type: "POST",
         data: $(this).serialize(), // get all form field value in serialize form
         success: function(){
@@ -297,7 +268,7 @@ $('body').on('click', '.btn-delete', function () {
     var id = $(this).data('id');
     if (confirm("Are You sure want to delete !")) {
      $.ajax({
-        url:"../backend/add-edit-delete.php",
+        url:"/backend/add-edit-delete.php",
         type: "POST",
         data: {
             id: id,
@@ -316,4 +287,3 @@ $('body').on('click', '.btn-delete', function () {
 
 </script>
 
-</html>
