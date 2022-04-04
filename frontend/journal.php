@@ -40,7 +40,7 @@
                                         <div class="form-group">
                                             <strong for="date" class="col-sm-2 control-label">Date du repas</strong>
                                             <div class="col-sm-12">
-                                            <input type="date" autocomplete="off" class="form-control" id="date" name ="date" required="">
+                                            <input type="datetime-local" autocomplete="off" class="form-control" id="date" name ="date" required="">
                                             </div>
                                         </div>
                                         <div class="form-group">
