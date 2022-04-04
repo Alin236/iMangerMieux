@@ -29,6 +29,10 @@ Le deuxième permet de faire une analyse journalière de sa consommation.
 L'application est séparé en deux parties, la partie backend et la partie frontend.
 La structure de l'application partie frontend est factorisée dans le fichier index.php.
 
+## Documentation
+
+Une documentation de l'API REST est disponible dans le fichier /backend/doc/RESTAPI.html.
+
 ## Installation
 
 Pour installer cette application en local il faut :
