@@ -45,13 +45,13 @@
       </tr>
       <tr>
         <td>countFruitVegetable.php</td>
-        <td></td>
-        <td></td>
+        <td>GET</td>
+        <td>Renvoie la moyenne par jour du nombre de fruits et légumes mangé par un utilisateur durant n jours. L'utilisateur et le nombre de jour n sont défini par les paramètres "id_utilisateur" et "jour".</td>
       </tr>
       <tr>
         <td>dailyAnalysis.php</td>
-        <td></td>
-        <td></td>
+        <td>GET</td>
+        <td>Renvoie un objet json comportant la liste des apports reçu par un utilisateur le jour actuel. L'utiliateur est défini par le paramètre id_utilisateur. L'objet json est de la forme "nom_apport: quantite_apport".</td>
       </tr>
       <tr>
         <td>searchnomaliment</td>
@@ -79,8 +79,8 @@
       </tr>
       <tr>
         <td>user</td>
-        <td></td>
-        <td></td>
+        <td>POST, PUT</td>
+        <td>POST login et mot_de_passe : permet d'authentifier un utilisateur. POST login, mot_de_passe, date_de_naissance, genre, nom, prenom : permet de créer un nouveau compte. PUT id_utilisateur, login, genre, date_de_naissance, nom, prenom : permet de modifier les informations personnel d'un utilisateur.</td>
       </tr>
       <tr>
         <td>user.repas.php</td>
