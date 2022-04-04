@@ -32,7 +32,11 @@ La structure de l'application partie frontend est factorisée dans le fichier in
 ## Installation
 
 Pour installer cette application en local il faut :
+
 1 - Cloner le git
+
 2 - Utiliser un serveur local (dans notre cas, nous avons utilisé WAMP)
+
 3 - Importer la base de donnée /backend/doc/imangermieux.sql
+
 4 - Configurer l'accés à la base de donnée dans les fichiers backend/connection.php ligne 3 à 6 et backend/aliment.php ligne 52 à 57.
