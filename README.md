@@ -40,3 +40,13 @@ Pour installer cette application en local il faut :
 3 - Importer la base de donnée /backend/doc/imangermieux.sql
 
 4 - Configurer l'accés à la base de donnée dans les fichiers backend/connection.php ligne 3 à 6 et backend/aliment.php ligne 52 à 57.
+
+## Piste d'amélioration
+
+Augmenter le nombre de graphique dans le dashbord.
+Comparer les calcules avec des valeurs recommandés.
+Permettre à l'utilisateur de renseigner les sports qu'il pratique.
+Prendre en compte l'âge, le genre, le sport pratiqué lors des calcules.
+Avoir une personnalisation de l'esthétique de l'application en sauvegardant la préférence de l'utilisateur dans un cookie.
+Permettre à l'utilisateur de chercher des aliments dans la base OpenFoodFact.
+Permettre de définir des aliments comme composés d'autres aliments présent dans la base.
