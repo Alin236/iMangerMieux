@@ -57,4 +57,4 @@ Pour installer cette application en local il faut :
 
 - Permettre de définir des aliments comme composés d'autres aliments présent dans la base.
 
-- Factorisation de la configuration : mettre les identifiants de connexion au SGBD dans un fichier /backend/config.php et mettre l'URL du backend dans un fichier /frontend/config.php.
+- Factoriser la configuration : mettre les identifiants de connexion au SGBD dans un fichier /backend/config.php et mettre l'URL du backend dans un fichier /frontend/config.php.
