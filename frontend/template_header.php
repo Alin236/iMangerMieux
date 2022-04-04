@@ -2,15 +2,15 @@
     session_start();
     $textConnection;
     if(isset($_SESSION['id_utilisateur'])){
-        $textConnection = '<p>Bienvenue '.$_SESSION['prenom'].'</p>';
+        $textConnection = '<a href="index.php?page=profil">'.$_SESSION['prenom'].' '.$_SESSION['nom'].'</a>';
     }
     else{
-        $textConnection = '<a href="http://imangermieux/frontend/index.php?page=connection">Connexion</a>';
+        $textConnection = '<a href="index.php?page=connection">Connexion</a>';
     }
 ?>
 <!DOCTYPE HTML>
 <html lang="fr">
-<head> 
+<head>
     <title>iMangerMieux</title> 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -35,4 +35,7 @@
     
 </head>
 <body>
-    <header><h1>iMangerMieux</h1><?php echo $textConnection ?></header>
+    <header class="bg-light">
+        <h1 class="text-center">iMangerMieux</h1>
+        <p class="text-end m-0 px-4"><?php echo $textConnection ?></p>
+    </header>
